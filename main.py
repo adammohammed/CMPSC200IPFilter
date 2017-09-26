@@ -58,27 +58,38 @@ def main():
        section. The program will look up the corresponding times and ip's and
        set them for the quiz indicated.
 
-       E.g. python main.py xyz1238 superpassword 7 1
+       E.g. python main.py xyz1238 superpassword 1
 
-       This will log in as user xyz1238 and set Quiz 7 to have the ip for
+       This will log in as user xyz1238 and set the quiz to have the ip for
        section 1.
     """
 
-    if len(sys.argv) != 5:
-        print("Usage: python {} username password quiz_num section".format(sys.argv[0]))
+    if len(sys.argv) != 4:
+        print("Usage: python {} username password section".format(sys.argv[0]))
         return -1
 
     user = sys.argv[1]
     passwd = sys.argv[2]
-    quiz_num = int(sys.argv[3])
-    section = int(sys.argv[4])
+    section = int(sys.argv[3])
 
     with open('quizzes.json', 'r') as f:
         course_info = json.load(f)
     courseID = course_info["courseID"]
+
+    # if the first section, increment quiz number
+    if section == 1:
+        course_info["lastQuiz"]  = course_info["lastQuiz"] + 1 #get quiz # for this week
+        with open('quizzes.json','w') as f:
+            json.dump(course_info, f, indent=4)
+
+    quiz_num = course_info["lastQuiz"]
     quizID = course_info["quizIDList"][quiz_num] # gets quiz url id
     room_name = course_info["room"][section]     # gets room for that section
-    ip = course_info[room_name]                  # gets ip for that room
+    ip = course_info[room_name]
+
+
+    with open('quizzes.json','w') as f:
+        json.dump(course_info, f, indent=4)
 
     driver = Firefox()
     navigate_to_canvas(driver, user, passwd)

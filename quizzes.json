@@ -1,6 +1,6 @@
 {
-    "courseID": "1896462",
-    "quizIDList": [
+    "courseID" : "1896462",
+    "quizIDList" : [
         0,
         3297055,
         3297036,
@@ -31,5 +31,6 @@
         "Willard"
     ],
     "Keller" : "146.186.100.0/25",
-    "Willard": "128.118.150.0/24"
+    "Willard" : "128.118.150.0/24",
+    "lastQuiz" : 6
 }
