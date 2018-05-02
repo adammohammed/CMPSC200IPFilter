@@ -36,12 +36,12 @@
       the automated quiz id, and the second element is the open-ended quiz id.
       These are found just like the quiz ids.
     + room - An array of the rooms associated with each section, the elements at
-      position 1 will be the key read when finding the IP filter. I.e. =room[1] =
-      "Keller210"= , so the program will look at the entry ="Keller210":
-      "128.118.160.0/25"= when adjusting the IP filter. Entries in the room
-      array, must also have an entry in the JSON file, with the *same* name as
-      the key and the value should be the IP filter associated with that room as
-      shown below.
+      position 1 will be the key read when finding the IP filter. I.e. =room[1]
+      = "Keller210"= 
+    , so the program will look at the entry ="Keller210": "128.118.160.0/25"=
+      when adjusting the IP filter. Entries in the room array, must also have an
+      entry in the JSON file, with the *same* name as the key and the value
+      should be the IP filter associated with that room as shown below.
     #+BEGIN_SRC javascript
     "Keller115": "192.168.1.0/25",
     "Keller210": "128.118.160.0/25",
