@@ -6,15 +6,15 @@
       https://github.com/adammohammed/CMPSC200IPFilter.git` or download the zip
       file and extract it to a directory of your choosing.
    3. Create a API token by logging in to canvas and following [these instructions](https://community.canvaslms.com/docs/DOC-10806-4214724194).
-   4. Create a file named /token/ in the application directory and paste your token.
-   5. Configure the =quizzes.json= file, explanations are in the next section.
+   4. Create a file named `token` in the application directory and paste your token.
+   5. Configure the `quizzes.json` file, explanations are in the next section.
    6. Set up a job to run this program at the times necessary
 
 ## Quizzes json file
 
    This file handles most of the configuration. It does take a bit of time to
    get set up, but once you fill it in, no more manual work is required. An
-   example =quizzes.json= is provided, but it **must** be changed each semester.
+   example `quizzes.json` is provided, but it **must** be changed each semester.
 
 ### Information needed to fill in JSON file
 + Course ID
@@ -24,23 +24,23 @@
 + Assessment ID pairs (one for automated and one for open-ended)
     
 ### JSON keys
-+ courseID - This should be the number which shows in the URL following the
++ **courseID** - This should be the number which shows in the URL following the
   /courses/ part `https://psu.instructure.com/courses/<courseID>`
 
-+ lastAssessment - Set this to *-1* at the start of each semester, this is
++ **lastAssessment** - Set this to *-1* at the start of each semester, this is
   how the program identifies the correct module and IP filter to modify.
 
-+ lastQuiz - Set this to *-1* at the start of each semester. Same as above,
++ **lastQuiz** - Set this to *-1* at the start of each semester. Same as above,
   chooses the correct quiz for the day.
 
-+ quizIDList - This is an array or all the quiz ID numbers which can be
++ **quizIDList** - This is an array or all the quiz ID numbers which can be
   found in the URL `https://psu.instructure.com/courses/<courseId>/quizzes/<quizID>`
 
-+ assessmentIDList - An array of 2 element arrays where the first element is
++ **assessmentIDList** - An array of 2 element arrays where the first element is
   the automated quiz id, and the second element is the open-ended quiz id.
   These are found just like the quiz ids.
 
-+ room - An array of the rooms associated with each section, the elements at
++ **room** - An array of the rooms associated with each section, the elements at
   position 1 will be the key read when finding the IP filter. I.e. `room[0] = "Keller210"` , so the program will look at the entry `"Keller210": "128.118.160.0/25"` when adjusting the IP filter. Entries in the room
   array, must also have an entry in the JSON file, with the *same* name as
   the key and the value should be the IP filter associated with that room as
