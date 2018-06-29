@@ -1,8 +1,8 @@
 {
 
     "courseID": "1930403",
-    "lastAssessment": 0,
-    "lastQuiz": 0,
+    "lastAssessment": -1,
+    "lastQuiz": -1,
     "Keller115": "192.168.1.0/25",
     "Keller210": "128.118.160.0/25",
     "Keller211": "192.168.1.0/25",
