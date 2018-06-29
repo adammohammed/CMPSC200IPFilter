@@ -65,7 +65,7 @@ def get_quiz_data(filename, quiz_type, section):
     idx = 'last{}'.format(quiz_type)
     quiznum= data[idx]
     idlist='{}IDList'.format(quiz_type.lower())
-    quizID = data[idlist][quiznum]
+    quizID = data[idlist][quiznum-1]
 
     print("Setting quiz {}".format(quizID))
     IP = get_room_ip(data, section)
@@ -90,7 +90,7 @@ def set_assessment(filename, section, token):
 
 def get_room_ip(data,section):
     """ Extracts the IP for that section from the JSON """
-    room_name = data['room'][section]
+    room_name = data['room'][section-1]
     IP = data[room_name]
     return IP
 
