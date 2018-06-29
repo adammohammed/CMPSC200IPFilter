@@ -2,8 +2,8 @@
 
 ## Setup 
    1. Make sure python 3 is available on the machine which will run this application.
-   2. Clone this repository with ~git clone
-      https://github.com/adammohammed/CMPSC200IPFilter.git~ or download the zip
+   2. Clone this repository with `git clone
+      https://github.com/adammohammed/CMPSC200IPFilter.git` or download the zip
       file and extract it to a directory of your choosing.
    3. Create a API token by logging in to canvas and following [[https://community.canvaslms.com/docs/DOC-10806-4214724194][these instructions]].
    4. Create a file named /token/ in the application directory and paste your token.
