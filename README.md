@@ -1,4 +1,4 @@
-# Canvas IP Filter Changer.
+# Canvas IP Filter Changer
 
 ## Setup 
    1. Make sure python 3 is available on the machine which will run this application.
@@ -27,10 +27,10 @@
 + **courseID** - This should be the number which shows in the URL following the
   /courses/ part `https://psu.instructure.com/courses/<courseID>`
 
-+ **lastAssessment** - Set this to *-1* at the start of each semester, this is
++ **lastAssessment** - Set this to *0* at the start of each semester, this is
   how the program identifies the correct module and IP filter to modify.
 
-+ **lastQuiz** - Set this to *-1* at the start of each semester. Same as above,
++ **lastQuiz** - Set this to *0* at the start of each semester. Same as above,
   chooses the correct quiz for the day.
 
 + **quizIDList** - This is an array or all the quiz ID numbers which can be
