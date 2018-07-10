@@ -1,4 +1,9 @@
 # Canvas IP Filter Changer
+This IP filter changer maintains a configuration file populated with the quiz and assessment ids, room names for each section, and ips for each room. When executing this program the user specifies a quiz type (i.e. quiz or assessment) and a section number (e.g 1 - 8). The program will do the relevant look-ups and set the IP for that room and section on the quiz for that day.
+
+*Important* This program does *NOT* execute or manage the times of its own execution. For this I've normally used cron, usually available on UNIX systems or Task Scheduler available on Windows. Using whichever scheduler, I set up task to execute this program a few minutes before each section on both Wednesdays and Fridays.
+
+For example on Wednesday at 8:00 a.m  the scheduler will run `python3 main.py quiz 1` and each 50 minutes will run changing the last argument to the corresponding section. On Fridays its the same, but instead of `quiz` the argument would be `assessment`.
 
 ## Setup 
    1. Make sure python 3 is available on the machine which will run this application.
