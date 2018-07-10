@@ -65,3 +65,6 @@
 ]
 ```
 
+## Additional Documentation
+
+The code is documented with Doxygen comments, to build additional documentation just perform, `doxygen doxygen.cfg`. This will create a docs folder with additional function/variable/parameter level comments which may be useful if extending or modifying the code. 
